@@ -1,0 +1,22 @@
+
+default:
+  translation:
+    locale: en
+  gherkin:
+    cache: ~
+  suites:
+    default:
+      mink_session: default
+
+  extensions:
+    Behat\MinkExtension:
+      browser_name: chrome
+      base_url: 'https://adsy.com.ua/test/automation-qa/'
+      sessions:
+        default:
+          selenium2:
+            wd_host: "http://192.168.88.111:5559/wd/hub"
+    tPayne\BehatMailExtension\ServiceContainer\MailExtension:
+      driver: mailtrap
+      api_key: 766d32c01dcedd0517546143188f19f7
+      mailbox_id: 209167
